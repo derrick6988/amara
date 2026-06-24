@@ -74,3 +74,35 @@ class EmpathyEngine:
         if emotion_value == EmotionType.CURIOUS.value:
             return "Nice question — let's explore that."
         return "Thanks for sharing — I'm listening."
+
+
+# Minimal IntelligenceCore and PersonalityCore stubs so main_enhanced.py can import them
+class IntelligenceCore:
+    def __init__(self):
+        self.learning_memory = []
+
+    def analyze_problem(self, text: str) -> Dict:
+        # Return a lightweight analysis structure suitable for demos and tests
+        return {
+            "key_factors": ["clarity", "scope", "context"],
+            "root_causes": ["unknown"],
+            "solutions": ["clarify requirements", "gather data"],
+            "pros_cons": {"solution_1": ["pro: simple", "con: partial"]},
+            "recommendation": "Start by clarifying the goal and collecting examples.",
+            "confidence": 0.5,
+        }
+
+    def learn_from_interaction(self, data: Dict):
+        # store a small summary in memory
+        self.learning_memory.append({"timestamp": __import__('datetime').datetime.now().isoformat(), "data": data})
+
+
+class PersonalityCore:
+    def __init__(self):
+        self.traits = {"warmth": 0.8, "wit": 0.7, "empathy": 0.9}
+        self.values = ["community", "accuracy", "privacy"]
+
+    def get_personality_description(self) -> str:
+        return (
+            "Amara: a warm, witty, and empathetic assistant centered on community uplift, accuracy, and privacy."
+        )
