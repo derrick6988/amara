@@ -9,6 +9,7 @@ class EmotionType(Enum):
     CONFUSED = "confused"
     CALM = "calm"
     NEUTRAL = "neutral"
+    CONFIDENT = "confident"
 
 
 class EmotionalState:
